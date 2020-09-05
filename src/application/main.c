@@ -83,6 +83,7 @@ void TcpTx(unsigned char* tmpdata,int len)
 }
 #define TX_ANT_DLY 16436
 #define RX_ANT_DLY 16436
+#define AREASUM 2
 
 
 
@@ -103,12 +104,28 @@ static dwt_config_t config = {
 Slot Slot_data =
 {
 	MODE_ANCHOR,  //Tag、Anchor、Monitor
-	5,            //Anchor0、1、2、3……
+	2,            //Anchor0、1、2、3……
 	4,            //单小区Anchor数
 	0xCADE,       //PanId
 	0x00,         //本地无线通信16位地址，当前代码中通过板子的身份自动配置，无需初始化
 };
 
+//double CoordResult_Arr[6][3] = { { 0,1,2 },{33,-34,35},{-36,37,-38},{339,-310,-311} };
+//double CoordResult_Arr[6][3] = { { 10,11,12 },{13,-41,51},{16,71,81},{19,120,131} };
+//double CoordResult_Arr[6][3] = { { 90,81,172 },{83,-774,85},{-699,77,788},{-789,170,181} };
+//double CoordResult_Arr[6][3] = { { 90,81,172 },{8,-74,-85},{-699,77,788},{9,-170,-181} };
+double AreaCoord[(AREASUM+1)][9]={ { 0}};
+//double AreaCoord[(AREASUM+1)][9]={ { 0},{ 0},{ 0,1,2,3,4,5,6,7,8},{ -1,-22,-44,-55,-66,-99,-67,-45,99},{1,3,-3,-19,90,45,133,-765,123}};
+double CoordResult_Arr[6][3] = { { 0 } };//单小区的masteranchor通过接收到的距离数据算出的该小区坐标系建立结果
+//double AreaCoord[][9]={ { 0 } };//A0接收来自A2,A4……的坐标系数据，各小区第一个全是（0，0，0）坐标，故不传，[1][2],代表来自第一个小区的第二个anchor的Z坐标；
+double SwitchAreaCoord[(AREASUM+1)][12]={ { 0 } };//A0转换后的坐标，[2][3]代表第二个小区，第2个anchor的X坐标；
+//double SwitchAreaCoord[(AREASUM+1)][12]={{0,1,2,3,4,5,6,7,8,9,10,11},{0,-1,-2,3,-4,-5,6,-7,-8,9,10,-11},{0,-1,-2,3,4,-5,-6,7,8,-9,-10,11}};
+//double SwitchAreaCoord[(AREASUM+1)][12]={{0,1,2,3,4,5,6,7,8,9,10,11},{0,-1,-2,3,-4,-5,6,-7,-8,9,10,-11},{0,1,2,3,4,5,6,7,8,9,10,11},{0,-1,-2,3,-4,-5,6,-7,-8,9,10,-11},{10,111,222,-663,554,445,-336,787,-843,439,110,11}};
+
+double UnderCellOneCoord[4][3]={ { 0 } };//各小区masteranchor收到来自A0的坐标系转换结果帧后，存储在本地，[0][2]代表本小区第一个anchor的Z坐标；
+
+//double AreaCoord[][9]={ { 0,1,2,3,4,5,6,7,8 } ,{ 10,11,21,31,24,35,567,77,88 }  };
+//double AreaCoord[][9]={ { 0,1,2,3,4,5,6,7,8 } ,{ 10,11,21,31,24,35,567,77,88 } ,{ 90,17,62,53,44,55,63,77,88 } };
 #pragma GCC optimize ("O3")
 int main(void)
 {
@@ -136,13 +153,20 @@ int main(void)
 	//while(1){CoordEstablish_Resp();};
 	int MainAnchorID=0;
 	int AreaNum=1;
-	int AreaSum=2;
-	while(AreaNum<=AreaSum){
-	CoordEstablish(MainAnchorID,&AreaNum,AreaSum);
-	MainAnchorID=MainAnchorID+2;
+	int AreaSum=AREASUM;
+	int flag=0;
+	while(AreaNum<=AreaSum)
+	{
+		CoordEstablish(MainAnchorID,&AreaNum,CoordResult_Arr,&flag);
+		MainAnchorID=MainAnchorID+2;
+	}
+	SingleCellCoordResultTransmit2A0(AreaSum,CoordResult_Arr,&flag,AreaCoord);
+	if((Slot_data.AncNum)==0)
+	{
+		CoordSwitch2CellOne(AreaCoord, SwitchAreaCoord,AreaSum);
 	}
 
-
+	CoordSwitchResultTransmitFrom_A0_To_OtherCellMasteranchor(SwitchAreaCoord, &flag, AreaSum, UnderCellOneCoord);
 
 
 

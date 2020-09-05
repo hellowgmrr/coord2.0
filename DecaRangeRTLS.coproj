@@ -58,6 +58,7 @@
         <Option name="Library" value="Use base C Library"/>
         <Option name="nostartfiles" value="0"/>
         <Option name="UserEditLinker" value="-lstdc++; "/>
+        <Option name="DiscardUnusedSections" value="1"/>
         <LinkedLibraries/>
         <MemoryAreas debugInFlashNotRAM="1">
           <Memory name="IROM1" type="ReadOnly" size="0x00040000" startValue="0x08000000"/>
@@ -65,7 +66,7 @@
           <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
           <Memory name="IRAM2" type="ReadWrite" size="" startValue=""/>
         </MemoryAreas>
-        <LocateLinkFile path="linkers/stm32_flash_256k_ram_64k.ld" type="0"/>
+        <LocateLinkFile path="../v8.5/linkers/stm32_flash_256k_ram_64k.ld" type="0"/>
       </Link>
       <Output>
         <Option name="OutputFileType" value="0"/>
@@ -242,9 +243,9 @@
     <File name="src/LWIP/lwi/port/httpd.h" path="src/LWIP/lwi/port/httpd.h" type="1"/>
     <File name="src/usb/usbd_usr.c" path="src/usb/usbd_usr.c" type="1"/>
     <File name="src/LWIP/lwi/src/include/ipv4/lwip/icmp.h" path="src/LWIP/lwi/src/include/ipv4/lwip/icmp.h" type="1"/>
+    <File name="src/LWIP/lwi/src/include/lwip/arch.h" path="src/LWIP/lwi/src/include/lwip/arch.h" type="1"/>
     <File name="src/application/instance.h" path="src/application/instance.h" type="1"/>
     <File name="src/LWIP/lwi/src/core/pbuf.c" path="src/LWIP/lwi/src/core/pbuf.c" type="1"/>
-    <File name="src/LWIP/lwi/src/include/lwip/arch.h" path="src/LWIP/lwi/src/include/lwip/arch.h" type="1"/>
     <File name="src/LWIP/lwi/src/include/lwip" path="" type="2"/>
     <File name="Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_gpio.h" path="Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_gpio.h" type="1"/>
     <File name="src/LWIP/lwi/port/arch" path="" type="2"/>
