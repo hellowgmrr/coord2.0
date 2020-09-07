@@ -21,6 +21,7 @@
 #include "stdio.h"
 #include "main.h"
 #include "appinit.h"
+#include "flash_function.h"
 __IO uint32_t LocalTime = 0; /* this variable is used to create a time reference incremented by 10ms */
 uint32_t timingdelay;
 
@@ -104,7 +105,7 @@ static dwt_config_t config = {
 Slot Slot_data =
 {
 	MODE_ANCHOR,  //Tag、Anchor、Monitor
-	2,            //Anchor0、1、2、3……
+	9,            //Anchor0、1、2、3……
 	4,            //单小区Anchor数
 	0xCADE,       //PanId
 	0x00,         //本地无线通信16位地址，当前代码中通过板子的身份自动配置，无需初始化
@@ -148,6 +149,14 @@ int main(void)
 	connect = Check_TCP_Connect();
 	sleep_ms(1500);
 	TcpTx("Init succ",20);
+
+	sleep_ms(1000);
+	uint16 readFlash[2];
+	getHalfWordData(0x0803f800, readFlash, 2);
+	char str[40];
+	sprintf(str,"READ_FLASH**: %X %X",readFlash[0],readFlash[1]);
+	TcpTx(str,40);
+	Slot_data.AncNum=readFlash[0];
 	dwt_settxantennadelay(TX_ANT_DLY);
 	dwt_setrxantennadelay(RX_ANT_DLY);
 	//while(1){CoordEstablish_Resp();};

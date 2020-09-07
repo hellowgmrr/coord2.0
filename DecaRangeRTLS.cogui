@@ -3,8 +3,8 @@
 <workbenchAdvisor/>
 <window>
 <fastViewData fastViewLocation="1024">
-<orientation position="512" view="org.coocox.component.ui.ComponentView"/>
 <orientation position="512" view="org.coocox.builder.ui.views.ProjectView"/>
+<orientation position="512" view="org.coocox.component.ui.ComponentView"/>
 <orientation position="512" view="org.coocox.codebugger.trace.ui.traceview"/>
 <orientation position="512" view="org.eclipse.debug.ui.DebugView"/>
 <orientation position="512" view="org.eclipse.ui.console.ConsoleView"/>
@@ -28,13 +28,13 @@
 <input factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory">&#x0A;<org.coocox.welcome.ui.WelcomePage/>
 </input>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/10406/Desktop/copy1/v8.8.2/src/application/main.c" title="main.c" tooltip="C:/Users/10406/Desktop/copy1/v8.8.2/src/application/main.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/10406/Desktop/copy1/v8.9.1/src/application/main.c" title="main.c" tooltip="C:/Users/10406/Desktop/copy1/v8.9.1/src/application/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DecaRangeRTLS/src/application/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="57" selectionOffset="5721" selectionTopPixel="2441"/>
+<editorState selectionHorizontalPixel="0" selectionLength="14" selectionOffset="5694" selectionTopPixel="2601"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="appinit.c" partName="appinit.c" path="C:/Users/10406/Desktop/copy1/v8.8.2/src/application/appinit.c" title="appinit.c" tooltip="C:/Users/10406/Desktop/copy1/v8.8.2/src/application/appinit.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="appinit.c" partName="appinit.c" path="C:/Users/10406/Desktop/copy1/v8.9.1/src/application/appinit.c" title="appinit.c" tooltip="C:/Users/10406/Desktop/copy1/v8.9.1/src/application/appinit.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DecaRangeRTLS/src/application/appinit.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="66120" selectionTopPixel="28441"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="42730" selectionTopPixel="19601"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="appinit.h" partName="appinit.h" path="C:/Users/10406/Desktop/copy1/v8.8.2/src/application/appinit.h" title="appinit.h" tooltip="C:/Users/10406/Desktop/copy1/v8.8.2/src/application/appinit.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/DecaRangeRTLS/src/application/appinit.h"/>
@@ -257,40 +257,8 @@
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/DecaRangeRTLS/src/application/appinit.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/DecaRangeRTLS/src/application/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/DecaRangeRTLS/src/application/main.c"/>
 </editors>
-<item historyLabel="appinit.c" index="0">
-<position info="not_deleted" x="42752" y="25"/>
-</item>
-<item historyLabel="appinit.c" index="0">
-<position info="not_deleted" x="32663" y="25"/>
-</item>
-<item historyLabel="appinit.c" index="0">
-<position info="not_deleted" x="32779" y="19"/>
-</item>
-<item historyLabel="appinit.c" index="0">
-<position info="not_deleted" x="23817" y="19"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="5721" y="57"/>
-</item>
-<item historyLabel="appinit.c" index="0">
-<position info="not_deleted" x="63679" y="57"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="5721" y="57"/>
-</item>
-<item historyLabel="appinit.c" index="0">
-<position info="not_deleted" x="63679" y="57"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="5546" y="32"/>
-</item>
-<item historyLabel="appinit.c" index="0">
-<position info="not_deleted" x="34704" y="32"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="5721" y="57"/>
-</item>
 <item historyLabel="appinit.c" index="0">
 <position info="not_deleted" x="65751" y="0"/>
 </item>
@@ -405,8 +373,41 @@
 <item historyLabel="appinit.c" index="0">
 <position info="not_deleted" x="66639" y="0"/>
 </item>
-<item active="true" historyLabel="appinit.c" index="0">
+<item historyLabel="appinit.c" index="0">
 <position info="not_deleted" x="66136" y="48"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="5752" y="57"/>
+</item>
+<item historyLabel="appinit.c" index="0">
+<position info="not_deleted" x="66149" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="5968" y="57"/>
+</item>
+<item historyLabel="appinit.c" index="0">
+<position info="not_deleted" x="54578" y="0"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="5694" y="14"/>
+</item>
+<item historyLabel="appinit.c" index="0">
+<position info="not_deleted" x="42356" y="14"/>
+</item>
+<item historyLabel="appinit.c" index="0">
+<position info="not_deleted" x="42734" y="26"/>
+</item>
+<item historyLabel="appinit.c" index="0">
+<position info="not_deleted" x="32348" y="21"/>
+</item>
+<item historyLabel="main.c" index="2">
+<position info="not_deleted" x="5694" y="14"/>
+</item>
+<item historyLabel="appinit.c" index="0">
+<position info="not_deleted" x="42730" y="0"/>
+</item>
+<item active="true" historyLabel="main.c" index="2">
+<position info="not_deleted" x="5694" y="14"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>

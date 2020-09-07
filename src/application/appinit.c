@@ -1171,6 +1171,7 @@ int CoordEstablish(int main_anchor_ID, int *area_num, double(*coordresultarr)[3]
 	switch (CellCoordEstablishID)
 	{
 	case SingleCellMasterAnchor0:
+		TcpTx("IDyigaiwei0", 20);
 		MasterAnchorCoordestablish(main_anchor_ID, coordresultarr, &(*flag));
 		(*area_num)++;
 		break;

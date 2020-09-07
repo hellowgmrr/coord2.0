@@ -1,0 +1,24 @@
+linstening:1031port...
+Connected：192.168.10.222
+ Init succ
+ READ_FLASH**: 0 2
+ IDyigaiwei0
+ DIST0 3:0.651 m
+ DIST0 2:0.243 m
+ DIST0 1:0.514 m
+ DIST13:0.269 m
+ DIST12:0.593 m
+ DIST23:0.740 m
+ Break
+ x:0.000 y:0.000 z:0.000
+ x:0.514 y:0.000 z:-0.000
+ x:-0.028 y:-0.237 z:-0.043
+ x:0.599 y:0.107 z:-0.232
+ all_area_coord_have_received_succ
+ succdisplay
+ AREA:2 Sx:0.773 Sy:-0.000 Sz:0.000
+
+ AREA:2 Tx:-0.656 Ty:1.079 Tz:0.019
+
+ AREA:2 Fx:0.512 Fy:-0.049 Fz:-0.118
+
